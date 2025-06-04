@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Github, Linkedin, Mail} from "lucide-react"
 import HeroSection from "@/components/temp/HeroSection"
 import ProjectSection from "@/components/temp/ProjectSection"
+import { Github, Linkedin, Mail } from "lucide-react"
+import { hero } from "@/data/hero"
+import { DataProject } from "@/data/project"
 
 
 export default function HomePage() {
@@ -11,8 +13,8 @@ export default function HomePage() {
     <div className="min-h-screen bg-dark-primary text-dark-primary">
 
       {/* Hero Section */}
-      <HeroSection/>
-      <ProjectSection/>
+      <HeroSection {...hero} />
+      <ProjectSection {...DataProject}/>
       
 
       {/* Experience Section */}

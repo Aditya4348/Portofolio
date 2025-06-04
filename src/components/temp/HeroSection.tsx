@@ -1,24 +1,32 @@
 import { Button } from "../ui/button";
 
+
+export interface ButtonProps {
+    label?: string;
+    variant?: string;
+}
+
+export interface SocialMediaProps {
+    icon?: React.ReactNode;
+    href?: string;
+    label?: string;
+}
+
 export interface HeroSectionProps {
     title?: string;
+    name?: string;
     subtitle?: string;
     description?: string;
-    buttons?: {
-        label?: string;
-        variant?: "default" | "outline";
-        onClick?: () => void;
-    }[];
-    socialMedias?: {
-        icon?: React.ReactNode;
-        href?: string;
-        label?: string;
-    }[];
+    buttons?: ButtonProps [];
+    socialMedias?: SocialMediaProps [];
     Profil?: string;
 }
 
+
+
 export default function HeroSection({
     title,
+    name,
     subtitle,
     description,
     buttons,
@@ -26,11 +34,12 @@ export default function HeroSection({
     Profil
 }: HeroSectionProps) {
     return (
-        <section id="home" className="pt-20 pb-16 px-4 min-h-screen flex items-center">
+        <section id="home" className="container mx-auto pt-20 pb-16 px-4 min-h-screen flex items-center">
             <div className="container mx-auto max-w-7xl">
                 <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                     <ContentSide
                         title={title}
+                        name={name}
                         subtitle={subtitle}
                         description={description}
                         buttons={buttons}
@@ -45,6 +54,7 @@ export default function HeroSection({
 
 export function ContentSide({
     title,
+    name,
     subtitle,
     description,
     buttons,
@@ -54,7 +64,7 @@ export function ContentSide({
         <div className="order-2 lg:order-1 text-center lg:text-left">
             <div className="mb-8">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                    {title}
+                    {title} <span className="text-blue-400">{name}</span>
                 </h1>
                 <h2 className="text-xl md:text-2xl lg:text-3xl text-dark-secondary mb-6 font-medium">
                     {subtitle}
@@ -69,8 +79,8 @@ export function ContentSide({
                     <Button
                         key={index}
                         size="lg"
-                        className={button.variant === "outline" ? "border-slate-600 hover:bg-slate-800" : "bg-blue-600 hover:bg-blue-700"}
-                        onClick={button.onClick}
+                        className={button.variant === "outline" ? "bg-slate-700 border-slate-600 hover:bg-slate-600 text-slate-100" : "bg-blue-600 hover:bg-blue-700 text-white"}
+                        
                     >
                         {button.label}
                     </Button>
@@ -103,7 +113,7 @@ export function ImageSide({ Profil }: HeroSectionProps) {
                 <div className="w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-blue-400 via-blue-500 to-purple-600 p-1 shadow-2xl">
                     <div className="w-full h-full rounded-full bg-dark-primary flex items-center justify-center overflow-hidden">
                         <img
-                            src={Profil}
+                            src={`/assets/${Profil || "placeholder.svg"}`}
                             alt="Profile"
                             width={400}
                             height={400}
