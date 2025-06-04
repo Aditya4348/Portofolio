@@ -1,26 +1,5 @@
 import { Button } from "../ui/button";
-
-
-export interface ButtonProps {
-    label?: string;
-    variant?: string;
-}
-
-export interface SocialMediaProps {
-    icon?: React.ReactNode;
-    href?: string;
-    label?: string;
-}
-
-export interface HeroSectionProps {
-    title?: string;
-    name?: string;
-    subtitle?: string;
-    description?: string;
-    buttons?: ButtonProps [];
-    socialMedias?: SocialMediaProps [];
-    Profil?: string;
-}
+import type { HeroSectionProps } from "@/data/interface/global";
 
 
 

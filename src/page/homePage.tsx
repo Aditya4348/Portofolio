@@ -5,7 +5,7 @@ import HeroSection from "@/components/temp/HeroSection"
 import ProjectSection from "@/components/temp/ProjectSection"
 import { Github, Linkedin, Mail } from "lucide-react"
 import { hero } from "@/data/hero"
-import { DataProject } from "@/data/project"
+import { ContentProject } from "@/data/project"
 
 
 export default function HomePage() {
@@ -14,7 +14,7 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <HeroSection {...hero} />
-      <ProjectSection {...DataProject}/>
+      <ProjectSection {...ContentProject}/>
       
 
       {/* Experience Section */}

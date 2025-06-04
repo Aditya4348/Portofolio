@@ -1,5 +1,5 @@
 import { House, User, LogOut } from "lucide-react";
-import { MenuContent, MenuListItem } from '../atom/menu';
+import { MenuContent, MenuListItem } from '../ui/menu';
 
 export default function MyMenu() {
     return (
