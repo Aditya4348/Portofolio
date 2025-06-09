@@ -1,3 +1,9 @@
+export interface SocialMediasProps {
+    socialMedia: {
+        icon?: React.ReactNode;
+        href?: string;
+    }[];
+}
 
 export interface HeroSectionProps {
     title?: string;
@@ -7,11 +13,6 @@ export interface HeroSectionProps {
     buttons?: {
         label?: string;
         variant?: string;
-    }[];
-    socialMedias?: {
-        icon?: React.ReactNode;
-        href?: string;
-        label?: string;
     }[];
     Profil?: string;
 }
@@ -54,3 +55,14 @@ export interface experienceProps {
     jobs: JobsProps[];
     skills: skillsProps[];
 }
+
+// interface bagian footer
+
+export interface FooterProps {
+    title?: string;
+    description?: string;
+    copyRight: string;
+}
+
+
+

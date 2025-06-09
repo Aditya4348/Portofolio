@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
-import { Badge } from "../ui/badge";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "../ui/card";
+import { Badge } from "../../ui/badge";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "../../ui/card";
 import type { JobsProps, skillsProps } from "@/data/interface/global";
 
 
