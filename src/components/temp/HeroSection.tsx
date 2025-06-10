@@ -3,6 +3,8 @@ import SocialMediaGroup from "../organism/SocialMediaGroup";
 import { Github, Linkedin, Mail, Instagram, } from "lucide-react"
 import type { HeroSectionProps } from "@/data/interface/global";
 import React from "react";
+import { ContainerLayout } from "../ui/LayoutSection";
+import ProfilImage from "../organism/ProfilImage";
 
 
 export default function HeroSection() {
@@ -15,16 +17,16 @@ export default function HeroSection() {
     ]
 
     return (
-        <section id="home" className="container mx-auto pt-20 pb-16 px-4 min-h-screen flex items-center">
-            <div className="container mx-auto max-w-7xl">
+        <main id="home" className="pt-20 pb-16 px-4 min-h-screen flex items-center">
+            <ContainerLayout  ClassName="max-w-6xl">
                 <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                     <ContentSide hero={hero}>
                         <SocialMediaGroup socialMedia={ DataMedia } />
                     </ContentSide>
                     <ImageSide Profil={hero.Profil} />
                 </div>
-            </div>
-        </section>
+            </ContainerLayout>
+        </main>
     )
 };
 
@@ -50,27 +52,11 @@ export function ContentSide({
 };
 
 
-interface ImageProps {
-    Profil?: string;
-}
-
-export const ImageSide = React.memo(function ImageSide({ Profil }: ImageProps) {
+export const ImageSide = React.memo(function ImageSide({ Profil }: {Profil?: string}) {
     return (
         <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
             <div className="relative">
-                {/* Main Profile Circle */}
-                <div className="w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-blue-400 via-blue-500 to-purple-600 p-1 shadow-2xl">
-                    <div className="w-full h-full rounded-full bg-dark-primary flex items-center justify-center overflow-hidden">
-                        <img
-                            src={`/assets/${Profil || "placeholder.svg"}`}
-                            alt="Profile"
-                            width={400}
-                            height={400}
-                            className="rounded-full object-cover w-full h-full"
-                            loading="lazy"
-                        />
-                    </div>
-                </div>
+                <ProfilImage Profil={Profil} />
 
                 {/* Floating Elements */}
                 <div className="absolute -top-6 -right-6 w-16 h-16 md:w-20 md:h-20 bg-blue-500 rounded-full animate-pulse shadow-lg"></div>

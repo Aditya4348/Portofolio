@@ -1,6 +1,7 @@
 import type { experienceProps } from "@/data/interface/global";
 import CardExperience from "../organism/card/CardExperience";
 import CardSectionTitle from "../organism/card/CardSectionTitle";
+import { ContainerLayout } from "../ui/LayoutSection";
 
 
 
@@ -8,7 +9,7 @@ import CardSectionTitle from "../organism/card/CardSectionTitle";
 export default function ExperienceSection({ title, description, titleWorks, titleSkills, jobs, skills }: experienceProps) {
     return (
         <section id="experience" className="py-16 px-4">
-            <div className="container mx-auto max-w-6xl">
+            <ContainerLayout ClassName="max-w-6xl">
                 <CardSectionTitle title={title} description={description} />
                 <div className="grid lg:grid-cols-2 gap-12">
                     <div>
@@ -28,7 +29,7 @@ export default function ExperienceSection({ title, description, titleWorks, titl
                         </div>
                     </div>
                 </div>
-            </div>
+            </ContainerLayout>
         </section>
     );
 }

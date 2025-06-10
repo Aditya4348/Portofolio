@@ -4,12 +4,12 @@ import { ContentProject } from "@/data/project";
 import { footer } from "@/data/footer";
 import { experience } from "@/data/experience";
 import { motion } from "framer-motion";
-import { LazyLoadSection } from "@/lib/LazyLoading";
+// import { LazyLoadSection } from "@/lib/LazyLoading";
 import React, { Suspense } from "react";
 
 // Lazy load untuk section yang tidak langsung terlihat
-const LazyProjectSection = React.lazy(() => import("@/components/temp/ProjectSection"));
-const LazyExperienceSection = React.lazy(() => import("@/components/temp/ExperienceSection"));
+const ProjectSection = React.lazy(() => import("@/components/temp/ProjectSection"));
+const ExperienceSection = React.lazy(() => import("@/components/temp/ExperienceSection"));
 
 export default function HomePage() {
   return (
@@ -18,27 +18,22 @@ export default function HomePage() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.4 }}
+      transition={{ duration: 0.2 }}
     >
       {/* Hero Section */}
       <HeroSection />
 
       {/* Project Section */}
-      <LazyLoadSection>
-        <Suspense fallback={<div>Loading project...</div>}>
-          <LazyProjectSection {...ContentProject} />
-        </Suspense>
-      </LazyLoadSection>
+      <Suspense fallback={<div>Loading project...</div>}>
+        <ProjectSection {...ContentProject} />
+      </Suspense>
 
       {/* Experience Section */}
-      <LazyLoadSection>
-        <Suspense fallback={<div>Loading experience...</div>}>
-          <LazyExperienceSection {...experience} />
-        </Suspense>
-      </LazyLoadSection>
+      <Suspense fallback={<div>Loading experience...</div>}>
+        <ExperienceSection {...experience} />
+      </Suspense>
 
-      {/* Footer */}
-      <FooterSection {...footer} />
+      
     </motion.div>
   );
 }
