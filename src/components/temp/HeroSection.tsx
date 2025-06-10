@@ -4,8 +4,6 @@ import { Github, Linkedin, Mail, Instagram, } from "lucide-react"
 import type { HeroSectionProps } from "@/data/interface/global";
 
 
-
-
 export default function HeroSection() {
 
     const DataMedia  = [
