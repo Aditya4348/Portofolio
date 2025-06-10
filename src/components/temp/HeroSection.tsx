@@ -2,6 +2,7 @@ import { hero } from "@/data/hero"
 import SocialMediaGroup from "../organism/SocialMediaGroup";
 import { Github, Linkedin, Mail, Instagram, } from "lucide-react"
 import type { HeroSectionProps } from "@/data/interface/global";
+import React from "react";
 
 
 export default function HeroSection() {
@@ -53,7 +54,7 @@ interface ImageProps {
     Profil?: string;
 }
 
-export function ImageSide({ Profil }: ImageProps) {
+export const ImageSide = React.memo(function ImageSide({ Profil }: ImageProps) {
     return (
         <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
             <div className="relative">
@@ -66,6 +67,7 @@ export function ImageSide({ Profil }: ImageProps) {
                             width={400}
                             height={400}
                             className="rounded-full object-cover w-full h-full"
+                            loading="lazy"
                         />
                     </div>
                 </div>
@@ -80,5 +82,5 @@ export function ImageSide({ Profil }: ImageProps) {
             </div>
         </div>
     )
-};
+}); 
 

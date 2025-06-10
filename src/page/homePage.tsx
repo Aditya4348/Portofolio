@@ -2,19 +2,22 @@ import HeroSection from "@/components/temp/HeroSection"
 import ProjectSection from "@/components/temp/ProjectSection"
 import { ContentProject } from "@/data/project"
 import { footer } from "@/data/footer"
-import { experience } from "@/data/experience"; 
+import { experience } from "@/data/experience" 
 import ExperienceSection from "@/components/temp/ExperienceSection"
 import FooterSection from '@/components/temp/FooterSection'
-import { MinimalNavbar } from "@/components/ui/minimal_Navbar";
+import { motion } from 'framer-motion'
 
 
 
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-dark-primary text-dark-primary">
-
-      <MinimalNavbar />
+    <motion.div className="min-h-screen bg-dark-primary text-dark-primary" 
+     initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.4 }}
+    >
 
       {/* Hero Section */}
       <HeroSection/>
@@ -27,6 +30,6 @@ export default function HomePage() {
 
       {/* Footer */}
       <FooterSection {...footer}/>
-    </div>
+    </motion.div>
   )
 }

@@ -1,10 +1,19 @@
 import { Route, Routes } from "react-router-dom";
 import HomePage from "../homePage";
+import AboutPage from "../aboutPage";
+import ExperiencePage from "../experiencePage";
+import ProjectPage from "../projectPage";
+import { AnimatePresence } from "framer-motion";
 
 export default function RouteApp() {
     return (
-        <Routes>
-            <Route path="/" element={<HomePage />} />
-        </Routes>
+        <AnimatePresence mode="wait">
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/experience" element={<ExperiencePage />} />
+                <Route path="/projects" element={<ProjectPage />} />
+            </Routes>
+        </AnimatePresence>
     )
 }
