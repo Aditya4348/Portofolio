@@ -23,19 +23,9 @@ const navItems: NavItem[] = [
     label: "About",
   },
   {
-    icon: <FolderGit className="w-5 h-5" />,
-    to: "/projects",
-    label: "Project",
-  },
-  {
     icon: <BriefcaseBusiness className="w-5 h-5" />,
     to: "/experience",
     label: "Experience",
-  },
-  {
-    icon: <FileBadge className="w-5 h-5" />,
-    to: "/certification",
-    label: "Sertification",
   },
 ]
 

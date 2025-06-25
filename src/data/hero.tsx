@@ -4,8 +4,8 @@ export const hero = {
   subtitle: 'Frontend Developer',
   description: 'Saya membangun antarmuka web modern dan responsif.',
   buttons: [
-    { label: 'Hire Me', variant: 'default' },
-    { label: 'Download CV', variant: 'outline' },
+    { label: 'Hire Me', variant: 'default', href: '#', show: true },
+    { label: 'Download CV', variant: 'outline', href: '#', show: true },
   ],
   Profil: "torin_photo.JPG",
 };
