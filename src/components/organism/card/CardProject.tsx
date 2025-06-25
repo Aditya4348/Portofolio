@@ -4,11 +4,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../..
 import { Badge } from "../../ui/badge";
 import { Link } from "react-router-dom";
 import type { ProjectProps } from "@/data/interface/global";
-import { DataProject } from "@/data/project";
 
-export default function CardProject() {
-    const projects = DataProject;
-
+export default function CardProject({projects}: any) {
+    
     if (projects.length > 0) {
         return (
             <Project projects={projects} />
