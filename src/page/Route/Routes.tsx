@@ -4,6 +4,7 @@ import AboutPage from "../aboutPage";
 import ExperiencePage from "../experiencePage";
 import ProjectPage from "../projectPage";
 import { AnimatePresence } from "framer-motion";
+import DetailPage from "@/components/temp/DetailPage";
 
 export default function RouteApp() {
     return (
@@ -13,6 +14,7 @@ export default function RouteApp() {
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/experience" element={<ExperiencePage />} />
                 <Route path="/projects" element={<ProjectPage />} />
+                <Route path="/detail" element={<DetailPage />} />
             </Routes>
         </AnimatePresence>
     )
