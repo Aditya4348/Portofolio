@@ -9,24 +9,30 @@ export const experience = {
             company: "Tech Solutions Inc.",
             period: "2022 - Present",
             description: "Led frontend development for multiple client projects using React and Next.js",
+            buttons: [{ label: "View Project", href: "#" }],
         },
         {
             title: "Full Stack Developer",
             company: "Digital Agency Co.",
             period: "2020 - 2022",
             description: "Developed and maintained web applications using MERN stack",
+            buttons: [{ label: "View Project", href: "#" }],
+
         },
         {
             title: "Junior Developer",
             company: "StartUp Hub",
             period: "2019 - 2020",
             description: "Built responsive websites and learned modern development practices",
+            buttons: [{ label: "View Project", href: "#" }],
+
         },
         {
             title: "Programmer",
             company: "StartUp",
             period: "2019 - 2020",
             description: "Built responsive websites using BPJS frameworks",
+            buttons: [{ label: "View Project", href: "#" }],
         },
     ],
     skills: [

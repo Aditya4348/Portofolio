@@ -41,6 +41,11 @@ export interface JobsProps {
     company?: string
     period?: string
     description?: string
+    buttons?: {
+        label: string;
+        href: string;
+        variant?: string;
+    }[];
 }
 
 export interface skillsProps {
