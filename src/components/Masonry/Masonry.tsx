@@ -7,6 +7,7 @@ import React, {
 } from "react";
 import { gsap } from "gsap";
 
+// Responsive column count hook
 const useMedia = (
   queries: string[],
   values: number[],
@@ -29,6 +30,7 @@ const useMedia = (
   return value;
 };
 
+// Size observer hook
 const useMeasure = <T extends HTMLElement>() => {
   const ref = useRef<T | null>(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
@@ -46,6 +48,7 @@ const useMeasure = <T extends HTMLElement>() => {
   return [ref, size] as const;
 };
 
+// Preload images
 const preloadImages = async (urls: string[]): Promise<void> => {
   await Promise.all(
     urls.map(
@@ -79,7 +82,7 @@ interface MasonryProps {
 }
 
 const Masonry: React.FC<MasonryProps> = ({
-  items,
+  items = [],
   ease = "power3.out",
   duration = 0.6,
   stagger = 0.05,
@@ -100,8 +103,39 @@ const Masonry: React.FC<MasonryProps> = ({
     1,
   );
 
-  const [containerRef, { width }] = useMeasure<HTMLDivElement>();
+  const [containerRef, size] = useMeasure<HTMLDivElement>();
   const [imagesReady, setImagesReady] = useState(false);
+
+  useEffect(() => {
+    if (!Array.isArray(items)) return;
+    preloadImages(items.map((i) => i.img)).then(() => setImagesReady(true));
+  }, [items]);
+
+  const grid = useMemo(() => {
+    if (!size.width) return [];
+    const colHeights = new Array(columns).fill(0);
+    const gap = 16;
+    const totalGaps = (columns - 1) * gap;
+    const columnWidth = (size.width - totalGaps) / columns;
+
+    return items.map((child) => {
+      const col = colHeights.indexOf(Math.min(...colHeights));
+      const x = col * (columnWidth + gap);
+      const height = child.height / 2;
+      const y = colHeights[col];
+
+      colHeights[col] += height + gap;
+      return { ...child, x, y, w: columnWidth, h: height };
+    });
+  }, [columns, items, size.width]);
+
+  const maxY = useMemo(() => {
+    return grid.length > 0
+      ? Math.max(...grid.map((item) => item.y + item.h))
+      : 0;
+  }, [grid]);
+
+  const hasMounted = useRef(false);
 
   const getInitialPosition = (item: any) => {
     const containerRect = containerRef.current?.getBoundingClientRect();
@@ -133,30 +167,6 @@ const Masonry: React.FC<MasonryProps> = ({
         return { x: item.x, y: item.y + 100 };
     }
   };
-
-  useEffect(() => {
-    preloadImages(items.map((i) => i.img)).then(() => setImagesReady(true));
-  }, [items]);
-
-  const grid = useMemo(() => {
-    if (!width) return [];
-    const colHeights = new Array(columns).fill(0);
-    const gap = 16;
-    const totalGaps = (columns - 1) * gap;
-    const columnWidth = (width - totalGaps) / columns;
-
-    return items.map((child) => {
-      const col = colHeights.indexOf(Math.min(...colHeights));
-      const x = col * (columnWidth + gap);
-      const height = child.height / 2;
-      const y = colHeights[col];
-
-      colHeights[col] += height + gap;
-      return { ...child, x, y, w: columnWidth, h: height };
-    });
-  }, [columns, items, width]);
-
-  const hasMounted = useRef(false);
 
   useLayoutEffect(() => {
     if (!imagesReady) return;
@@ -228,8 +238,12 @@ const Masonry: React.FC<MasonryProps> = ({
   };
 
   return (
-    <div ref={containerRef} className="relative w-full h-full">
-      {grid.map((item) => (
+    <div
+      ref={containerRef}
+      className="relative w-full"
+      style={{ height: maxY }}
+    >
+      {Array.isArray(grid) && grid.map((item) => (
         <div
           key={item.id}
           data-key={item.id}
