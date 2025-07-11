@@ -9,19 +9,16 @@ import {
 import { ContainerLayout } from "@/components/ui/LayoutSection";
 import TabsOrganisation from "@/components/organism/TabsOrganisation";
 import TabsCertification from "@/components/organism/TabsCertification";
-
-const hero = {
-  subtitle: "About Me",
-  description:
-    "Saya seorang Frontend Developer yang berpengalaman selama 5 tahun. Saya memiliki kemampuan dalam membuat antarmuka web yang modern dan responsif. Saya juga memiliki kemampuan dalam mengembangkan web application menggunakan teknologi React, Next.js, dan TypeScript.",
-};
+import  AboutMe  from "@/data/AboutMe";
 
 export default function AboutPage() {
+  const item = AboutMe;
+
   return (
     <main className="bg-dark-primary text-dark-primary overflow-x-hidden">
       <section className="pt-20 pb-16 px-4 min-h-screen flex-col items-center">
         <ContainerLayout ClassName="max-w-6xl flex flex-col lg:flex-row-reverse items-center justify-between">
-          <ContentSide hero={hero}></ContentSide>
+          <ContentSide hero={item}></ContentSide>
           <ProfilImage Profil="torin_photo.JPG" />
         </ContainerLayout>
 

@@ -22,15 +22,17 @@ export interface HeroSectionProps {
 export interface ProjectItem {
     title: string;
     description: string;
-    image: string;
+    mainImage: string;
+    image: string[];
     tags: string[];
     github: string;
-    detail: string;
+    detail: { category: string; id: string }[];
 }
 
 export interface ProjectProps {
     title?: string;
     description?: string;
+    detaildescription?: string;
     projects?: ProjectItem[];
 }
 
@@ -42,9 +44,11 @@ export interface JobsProps {
     company?: string
     period?: string
     description?: string
+    detaildescription?: string
     buttons?: {
         label: string;
-        href: string;
+        category?: string;
+        id?: string;
         variant?: string;
     }[];
 }

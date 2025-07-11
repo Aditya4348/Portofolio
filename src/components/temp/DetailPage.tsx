@@ -33,7 +33,7 @@ export default function DetailPage() {
         <div className="absolute inset-0 z-0">
           <div
             className="w-full h-full bg-cover blur-xs bg-center"
-            style={{ backgroundImage: `url(${item.mainImage})` }}
+            style={{ backgroundImage: `url(../../assets/${item.mainImage})` }}
             aria-hidden="true"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60" />
@@ -41,7 +41,7 @@ export default function DetailPage() {
 
         <div className="relative z-10 w-full">
           <ContainerLayout ClassName="max-w-6xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-5xl font-bold text-white mt-4">
+            <h1 className="text-white text-4xl font-bold stroke-text mt-4">
               {item.title}
             </h1>
           </ContainerLayout>
@@ -52,7 +52,7 @@ export default function DetailPage() {
       <section className="py-16 px-4">
         <ContainerLayout ClassName="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold">Tentang {item.title}</h2>
-          <p className="mt-4 text-gray-500 leading-relaxed">{item.description}</p>
+          <p className="mt-4 text-gray-500 leading-relaxed">{item.detaildescription}</p>
         </ContainerLayout>
       </section>
 

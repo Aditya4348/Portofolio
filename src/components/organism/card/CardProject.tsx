@@ -35,7 +35,7 @@ export function Project({ projects }: ProjectProps) {
                 >
                     <div className="relative overflow-hidden">
                         <img
-                            src={`/assets/projects/${project.image || "placeholder.svg"}`}
+                            src={`/public/assets/${project.mainImage || "placeholder.svg"}`}
                             alt={project.title}
                             width={300}
                             height={200}
@@ -48,7 +48,7 @@ export function Project({ projects }: ProjectProps) {
                                     Code
                                 </Button>
                             </a>
-                            <Link to={project.detail} >
+                            <Link to={`/detail/${project.detail[0].category}/${project.detail[0].id}`} >
                                 <Button size="sm" variant="secondary">
                                     <ExternalLink className="w-4 h-4 mr-2" />
                                     Detail
