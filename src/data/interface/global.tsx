@@ -12,7 +12,8 @@ export interface HeroSectionProps {
     description?: string;
     buttons?: {
         label: string;
-        href: string;
+        category?: string;
+        id?: string;
         variant?: string;
     }[];
     Profil?: string;

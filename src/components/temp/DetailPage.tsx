@@ -1,53 +1,58 @@
+import { useParams } from "react-router-dom";
 import Masonry from "../Masonry/Masonry";
 import { ContainerLayout } from "../ui/LayoutSection";
+import globalData from "@/data/globalData";
 
-interface DetailProps {
-  tittle: string;
-  description: string;
-  mainImages: string;
-  images: {
+export default function DetailPage() {
+  type DetailParams = {
+    category: string;
     id: string;
-    img: string;
-    url: string;
-    height: number;
-  }[];
-}
+  };
 
-export default function DetailPage({
-  tittle,
-  description,
-  images,
-  mainImages,
-}: DetailProps) {
+  const { category, id } = useParams<DetailParams>();
+
+  const isValidCategory = (key: string): key is keyof typeof globalData => {
+    return key in globalData;
+  };
+
+  if (!category || !isValidCategory(category)) {
+    return <p>Kategori "{category}" tidak ditemukan.</p>;
+  }
+
+  const data = globalData[category];
+  const item = data.find((items) => items.id === id);
+
+  if (!item) {
+    return <p>Proyek dengan ID "{id}" tidak ditemukan.</p>;
+  }
+
   return (
     <main className="bg-dark-primary text-dark-primary">
       {/* SECTION DENGAN BACKGROUND */}
       <section className="relative pt-20 pb-16 px-4 min-h-screen flex items-center justify-center">
-        {/* Background + Overlay */}
         <div className="absolute inset-0 z-0">
           <div
             className="w-full h-full bg-cover blur-xs bg-center"
-            style={{ backgroundImage: `url(${mainImages})` }}
+            style={{ backgroundImage: `url(${item.mainImage})` }}
             aria-hidden="true"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60" />
         </div>
 
-        {/* Konten di atas background */}
         <div className="relative z-10 w-full">
           <ContainerLayout ClassName="max-w-6xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-white mt-4">
-              {tittle}
+              {item.title}
             </h1>
           </ContainerLayout>
         </div>
       </section>
 
-      {/* SECTION SETELAH BACKGROUND */}
-      <section className=" py-16 px-4">
+      {/* SECTION DETAIL */}
+      <section className="py-16 px-4">
         <ContainerLayout ClassName="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold">Tentang {tittle}</h2>
-          <p className="mt-4 text-gray-500 leading-relaxed">{description}</p>
+          <h2 className="text-3xl font-bold">Tentang {item.title}</h2>
+          <p className="mt-4 text-gray-500 leading-relaxed">{item.description}</p>
         </ContainerLayout>
       </section>
 
@@ -56,10 +61,10 @@ export default function DetailPage({
         <div className="max-w-6xl mx-auto">
           <h1 className="text-3xl font-bold mb-8">Gallery</h1>
           <p className="text-gray-700 leading-relaxed">
-            berikut adalah kumpulan dokumentasi foto dari {tittle}
+            Berikut adalah kumpulan dokumentasi foto dari {item.title}
           </p>
           <Masonry
-            items={images} // pastikan items punya id, img, url, height
+            items={item.images}
             ease="power3.out"
             duration={0.6}
             stagger={0.05}

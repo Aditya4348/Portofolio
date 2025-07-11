@@ -14,7 +14,7 @@ export default function RouteApp() {
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/experience" element={<ExperiencePage />} />
                 <Route path="/projects" element={<ProjectPage />} />
-                <Route path="/detail" element={<DetailPage />} />
+                <Route path="/detail/:category/:id" element={<DetailPage />} />
             </Routes>
         </AnimatePresence>
     )

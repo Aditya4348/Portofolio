@@ -5,9 +5,14 @@ export const ContentProject = {
 
 export const DataProject = [
     {
+        id: "1",
         title: "E-Commerce Platform",
         description: "Modern e-commerce solution built with Next.js and Stripe integration",
-        image: "default.jpeg",
+        mainImage: "default.jpeg",
+        images: [
+                { id: "1", img: "default.jpeg", url: "Programmer", height: 200 },
+                { id: "2", img: "default.jpeg", url: "Programmer", height: 200 },
+            ],
         tags: ["Next.js", "TypeScript", "Stripe", "Tailwind"],
         github: "#",
         detail: "#",

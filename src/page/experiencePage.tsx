@@ -5,7 +5,7 @@ import { experience } from "@/data/experience";
 
 export default function ExperiencePage() {
   return (
-    <main className="bg-dark-primary text-dark-primary">
+    <main className="bg-dark-primary text-dark-primary overflow-x-hidden">
       <section className="pt-20 pb-16 px-4 min-h-screen flex-col space-y-8 items-center">
         
         {/**
@@ -15,15 +15,15 @@ export default function ExperiencePage() {
           index % 2 === 0 ? (
             <ContainerLayout
               key={index}
-              ClassName="max-w-6xl flex flex-col lg:flex-row-reverse items-center justify-between"
+              ClassName="max-w-6xl flex flex-col lg:flex-row-reverse gap-12 items-center justify-between"
             >
               <ContentSide hero={jobs}></ContentSide>
               <ProfilImage Profil="torin_photo.JPG" />
             </ContainerLayout>
           ) : (
-            <ContainerLayout key={index} ClassName="max-w-6xl flex flex-col lg:flex-row items-center justify-between">
+            <ContainerLayout key={index} ClassName="max-w-6xl flex flex-col lg:flex-row gap-12 items-center justify-between">
               <ProfilImage Profil="torin_photo.JPG" />
-              <div className="w-1/2">
+              <div className="md:w-1/2 w-full">
                 <ContentSide hero={jobs}></ContentSide>
               </div>
             </ContainerLayout>

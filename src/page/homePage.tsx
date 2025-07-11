@@ -1,7 +1,5 @@
 import HeroSection from "@/components/temp/HeroSection";
-import FooterSection from "@/components/temp/FooterSection";
 import { ContentProject } from "@/data/project";
-import { footer } from "@/data/footer";
 import { experience } from "@/data/experience";
 import { motion } from "framer-motion";
 // import { LazyLoadSection } from "@/lib/LazyLoading";

@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { Link, useLocation } from "react-router-dom"
-import { Home, User, FolderGit, BriefcaseBusiness, FileBadge } from "lucide-react"
+import { Home, User, BriefcaseBusiness } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 interface NavItem {

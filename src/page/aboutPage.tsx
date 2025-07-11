@@ -18,7 +18,7 @@ const hero = {
 
 export default function AboutPage() {
   return (
-    <main className="bg-dark-primary text-dark-primary">
+    <main className="bg-dark-primary text-dark-primary overflow-x-hidden">
       <section className="pt-20 pb-16 px-4 min-h-screen flex-col items-center">
         <ContainerLayout ClassName="max-w-6xl flex flex-col lg:flex-row-reverse items-center justify-between">
           <ContentSide hero={hero}></ContentSide>
