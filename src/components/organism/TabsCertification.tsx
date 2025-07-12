@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, Building2 } from "lucide-react"
-import AboutMe from "@/data/AboutMe"
+import { AboutMe } from "@/data/AboutMe"
 import { Link } from "react-router-dom"
 
 export default function TabsCertification() {

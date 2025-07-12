@@ -1,7 +1,8 @@
-const AboutMe = {
+export const AboutMe = {
   subtitle: "About Me",
   description:
     "Aditya Alfitodinova is a passionate individual in the field of technology and digital development. Experienced in building various projects, including web applications, user interfaces, and technical documentation.Accustomed to working independently or in a team, while continuously developing both technical and interpersonal skills such as communication, collaboration, and problem-solving.Open to professional opportunities, freelance work, or creative collaborations. Every project is seen as a space to learn, grow, and create meaningful impact.",
+  // ORGANISATION DATA
   organisations: [
     {
       id: "1",
@@ -14,21 +15,19 @@ const AboutMe = {
       enter: "2022",
       featured: true,
       detaildescription: "",
-      mainImage: "/Pameran/main.jpg",
+      mainImage: "/OSIS/main.jpeg",
       images: [
-        { id: "1", img: "Pameran/1 (1).jpg", url: "Programmer", height: 200 },
-        { id: "2", img: "Pameran/1 (6).jpg", url: "Programmer", height: 200 },
-        { id: "3", img: "Pameran/1 (7).jpg", url: "Programmer", height: 200 },
-        { id: "4", img: "Pameran/1 (8).jpg", url: "Programmer", height: 200 },
-        { id: "5", img: "Pameran/1 (9).jpg", url: "Programmer", height: 200 },
-        { id: "6", img: "Pameran/1 (10).jpg", url: "Programmer", height: 200 },
-        { id: "7", img: "Pameran/1 (11).jpg", url: "Programmer", height: 200 },
+        { id: "1", img: "OSIS/1.jpeg", url: "OSIS", height: 300 },
+        { id: "2", img: "OSIS/2.jpeg", url: "OSIS", height: 300 },
+        { id: "3", img: "OSIS/3.jpeg", url: "OSIS", height: 300 },
+        { id: "4", img: "OSIS/4.jpeg", url: "OSIS", height: 300 },
+        { id: "5", img: "OSIS/5.jpeg", url: "OSIS", height: 300 },
       ],
-      detail: [{ category: "organization", id: "1" }],
+      detail: [{ category: "organisations", id: "1" }],
     },
     {
       id: "2",
-      image: "",
+      image: "KARTA.png",
       title: "Karang Taruna",
       description:
         "Environmental organization dedicated to sustainable practices and climate change awareness. Working towards a greener future through community engagement and innovative solutions.",
@@ -37,22 +36,21 @@ const AboutMe = {
       enter: "2023",
       featured: true,
       detaildescription: "",
-      mainImage: "/Pameran/main.jpg",
+      mainImage: "/karangTaruna/Main.jpg",
       images: [
-        { id: "1", img: "Pameran/1 (1).jpg", url: "Programmer", height: 200 },
-        { id: "2", img: "Pameran/1 (6).jpg", url: "Programmer", height: 200 },
-        { id: "3", img: "Pameran/1 (7).jpg", url: "Programmer", height: 200 },
-        { id: "4", img: "Pameran/1 (8).jpg", url: "Programmer", height: 200 },
-        { id: "5", img: "Pameran/1 (9).jpg", url: "Programmer", height: 200 },
-        { id: "6", img: "Pameran/1 (10).jpg", url: "Programmer", height: 200 },
-        { id: "7", img: "Pameran/1 (11).jpg", url: "Programmer", height: 200 },
+        { id: "1", img: "karangTaruna/1.jpg", url: "KARTA", height: 400 },
+        { id: "2", img: "karangTaruna/2.jpg", url: "KARTA", height: 400 },
+        { id: "3", img: "karangTaruna/3.jpg", url: "KARTA", height: 400 },
+        { id: "4", img: "karangTaruna/4.jpg", url: "KARTA", height: 400 },
+        { id: "5", img: "karangTaruna/5.jpg", url: "KARTA", height: 400 },
       ],
-      detail: [{ category: "organization", id: "2" }],
+      detail: [{ category: "organisations", id: "2" }],
     },
   ],
+  // CERTIFICATIONS DATA
   certifications: [
     {
-      id: '1',
+      id: '1', 
       title: "Belajar Vue Js Fundamental",
       issuer: "NextSkill",
       issueDate: "June 2025",
@@ -60,7 +58,7 @@ const AboutMe = {
       status: "Active",
       field: "Front-End Developer",
       detaildescription: "",
-      mainImage: "/projects/default.jpeg",
+      mainImage: "/Sertifikat/Sertifikat_VUEJS_NEXTskill.jpg",
       images: [
         { id: "1", img: "Pameran/1 (1).jpg", url: "Programmer", height: 200 },
         { id: "2", img: "Pameran/1 (6).jpg", url: "Programmer", height: 200 },
@@ -74,5 +72,3 @@ const AboutMe = {
     },
   ],
 };
-
-export default AboutMe;

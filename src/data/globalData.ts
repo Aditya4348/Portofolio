@@ -1,12 +1,12 @@
 import { experience } from "@/data/experience";
 import { DataProject } from "./project";
-import AboutMe from "./AboutMe";
+import { AboutMe } from "./AboutMe";
 
 
 const globalData = {
     experience: experience.jobs,
     project: DataProject,
-    organisation: AboutMe.organisations,
+    organisations: AboutMe.organisations,
     certifications: AboutMe.certifications,
 }
 

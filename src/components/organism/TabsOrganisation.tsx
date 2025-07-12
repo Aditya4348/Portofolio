@@ -1,7 +1,7 @@
 import { Calendar, ExternalLink, MapPin, Users } from "lucide-react";
 import { Card, CardContent } from "../ui/card";
 import { Button } from "../ui/button";
-import  AboutMe  from "@/data/AboutMe";
+import  { AboutMe }  from "@/data/AboutMe";
 import { Link } from "react-router-dom";
 
 export default function TabsOrganisation() {

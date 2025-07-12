@@ -36,7 +36,7 @@ export const DataProject = [
         id: "3",
         title: "Slicing Web ( Vue JS )",
         description: "A responsive website layout sliced and implemented using Vue.js and Tailwind CSS, focusing on clean UI structure, reusable components, and modern frontend best practices.",
-        detaildescription: "",
+        detaildescription: "This website was developed using Vue.js, adopting a clean and structured UI architecture and emphasizing component reusability. By leveraging this technology, we are able to build a modern, efficient, and easily maintainable web application.The creation of this website originated as a Final Project for a Bootcamp organized by NextSkill, titled “Learning Vue.js Fundamentals”. This project not only serves as a practical application of the skills acquired, but also marks the beginning of a professional portfolio in frontend development.",
         mainImage: "SlicingVueJS.png",
         images: [
                 { id: "1", img: "default.jpeg", url: "Programmer", height: 200 },
@@ -50,7 +50,8 @@ export const DataProject = [
         id: "4",
         title: "Financial Web App",
         description: "A financial management web application built with Laravel Livewire and Tailwind CSS, featuring real-time transaction tracking, income and expense reports, and role-based access control. Designed for simplicity, performance, and clarity in managing personal or team finances.",
-        detaildescription: "",
+        detaildescription: "This website is the result of an independently established website development service, built using the PHP programming language and the Laravel framework. The development process was carried out professionally, with a focus on clean code structure, system efficiency, and ease of maintenance. The website uses Indonesian as the primary language, ensuring accessibility and clarity for its local target audience.",
+        
         mainImage: "FinancialWeb.png",
         images: [
                 { id: "1", img: "default.jpeg", url: "Programmer", height: 200 },
