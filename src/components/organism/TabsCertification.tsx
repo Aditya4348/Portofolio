@@ -1,68 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Calendar, Award, Building2, Eye } from "lucide-react"
+import { Calendar, Building2 } from "lucide-react"
+import AboutMe from "@/data/AboutMe"
+import { Link } from "react-router-dom"
 
 export default function TabsCertification() {
-  const certifications = [
-    {
-      id: 1,
-      title: "AWS Solutions Architect Professional",
-      issuer: "Amazon Web Services",
-      issueDate: "March 2024",
-      expiryDate: "March 2027",
-      status: "Active",
-      category: "Cloud Computing",
-      image: "../assets/projects/default.jpeg",
-      credentialId: "AWS-SAP-2024-001",
-      verified: true,
-    },
-    {
-      id: 2,
-      title: "Google Cloud Professional Developer",
-      issuer: "Google Cloud",
-      issueDate: "January 2024",
-      expiryDate: "January 2026",
-      status: "Active",
-      category: "Development",
-      image: "../assets/projects/default.jpeg",
-      credentialId: "GCP-PD-2024-002",
-      verified: true,
-    },
-    {
-      id: 3,
-      title: "Microsoft Azure Fundamentals",
-      issuer: "Microsoft",
-      issueDate: "December 2023",
-      expiryDate: "Never",
-      status: "Active",
-      category: "Cloud Computing",
-      image: "../assets/projects/default.jpeg",
-      verified: true,
-    },
-    {
-      id: 4,
-      title: "Certified Kubernetes Administrator",
-      issuer: "Cloud Native Computing Foundation",
-      issueDate: "November 2023",
-      expiryDate: "November 2026",
-      status: "Active",
-      category: "DevOps",
-      image: "../assets/projects/default.jpeg",
-      verified: true,
-    },
-    {
-      id: 5,
-      title: "Project Management Professional",
-      issuer: "Project Management Institute",
-      issueDate: "September 2023",
-      expiryDate: "September 2026",
-      status: "Active",
-      category: "Management",
-      image: "../assets/projects/default.jpeg",
-      verified: true,
-    },
-  ]
+    const item = AboutMe.certifications
 
   return (
     <div className="w-full space-y-6 mt-5">
@@ -70,13 +13,13 @@ export default function TabsCertification() {
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-2xl font-bold text-gray-100">My Certifications</h2>
-          <p className="text-gray-600 mt-1 text-justify">{certifications.length} professional certifications</p>
+          <p className="text-gray-600 mt-1 text-justify">{item.length} professional certifications</p>
         </div>
       </div>
 
       {/* Certifications Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {certifications.map((cert) => (
+        {item.map((cert) => (
           <Card
             key={cert.id}
             className="group overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-gray-200"
@@ -84,7 +27,7 @@ export default function TabsCertification() {
             {/* Certificate Image */}
             <div className="relative overflow-hidden">
               <img
-                src={cert.image || "/placeholder.svg"}
+                src={`/public/assets/${cert.mainImage}`}
                 alt={cert.title}
                 className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -99,20 +42,13 @@ export default function TabsCertification() {
                 {cert.status}
               </Badge>
 
-              {/* Verified Badge */}
-              {cert.verified && (
-                <div className="absolute top-3 right-3 bg-blue-500 rounded-full p-1">
-                  <Award className="w-4 h-4 text-white" />
-                </div>
-              )}
 
               {/* Hover Actions */}
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="flex space-x-2">
-                  <Button size="sm" variant="secondary" className="cursor-pointer">
-                    <Eye className="w-4 h-4 mr-1" />
-                    View
-                  </Button>
+                  <Link to={`/detail/${cert.detail[0].category}/${cert.detail[0].id}`} className="text-white bg-blue-500 hover:bg-blue-600 px-2 py-1 rounded-md text-sm font-semibold transition-colors duration-300">
+                    View Detail
+                  </Link>
                 </div>
               </div>
             </div>
@@ -123,7 +59,7 @@ export default function TabsCertification() {
               <div>
                 <h3 className="font-semibold text-lg text-gray-900 line-clamp-2 mb-1">{cert.title}</h3>
                 <Badge variant="outline" className="text-xs border-gray-800 text-gray-800">
-                  {cert.category} 
+                  {cert.field} 
                 </Badge>
               </div>
 

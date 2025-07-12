@@ -12,7 +12,7 @@ export const experience = {
             period: "2024 Sept - 2024 Dec",
             description: "Internship as a Frontend Developer at Jasawebsite.biz with a focus on web development using WordPress and maintenance for various client projects.",
             detaildescription: "",
-            mainImage: "torin_photo.JPG",
+            mainImage: "/PKL/IMG_20241122_144114.jpg",
             images: [
                 { id: "1", img: "default.jpeg", url: "Programmer", height: 200 },
                 { id: "2", img: "default.jpeg", url: "Programmer", height: 200 },
@@ -26,10 +26,15 @@ export const experience = {
             period: "2025",
             description: "1st Place in Student Exhibition with School Savings App. Acted as Frontend Developer and presentation mediator",
             detaildescription: "",
-            mainImage: "torin_photo.JPG",
+            mainImage: "/Pameran/main.jpg",
             images: [
-                { id: "1", img: "default.jpeg", url: "Programmer", height: 200 },
-                { id: "2", img: "default.jpeg", url: "Programmer", height: 200 },
+                { id: "1", img: "Pameran/1_(17).jpg", url: "Programmer", height: 400 },
+                { id: "2", img: "Pameran/1_(16).jpg", url: "Programmer", height: 400 },
+                { id: "3", img: "Pameran/1_(15).jpg", url: "Programmer", height: 400 },
+                { id: "4", img: "Pameran/1_(14).jpg", url: "Programmer", height: 400 },
+                { id: "5", img: "Pameran/1_(13).jpg", url: "Programmer", height: 400 },
+                { id: "6", img: "Pameran/1_(12).jpg", url: "Programmer", height: 400 },
+                { id: "7", img: "Pameran/1_(11).jpg", url: "Programmer", height: 400 },
             ],
             buttons: [{ label: "View Project", category: "experience", id: "2" }],
 

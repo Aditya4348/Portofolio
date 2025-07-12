@@ -2,6 +2,7 @@ import { Calendar, ExternalLink, MapPin, Users } from "lucide-react";
 import { Card, CardContent } from "../ui/card";
 import { Button } from "../ui/button";
 import  AboutMe  from "@/data/AboutMe";
+import { Link } from "react-router-dom";
 
 export default function TabsOrganisation() {
   
@@ -28,11 +29,11 @@ export default function TabsOrganisation() {
             key={index}
             className="overflow-hidden hover:shadow-lg transition-shadow duration-300"
           >
-            <div className="relative">
+            <div className="relative mx-auto flex items-center justify-center">
               <img
-                src={org.image || "/placeholder.svg"}
+                src={`/public/assets/${org.image || "placeholder.svg"}`}
                 alt={org.title}
-                className="w-full h-48 object-cover"
+                className="w-1/2 object-cover"
               />
             </div>
             <CardContent className="p-6">
@@ -62,12 +63,12 @@ export default function TabsOrganisation() {
                 </div>
 
                 <div className="flex space-x-2 pt-2">
-                  <Button
-                    className="flex-1 bg-blue-600 hover:bg-blue-700 cursor-pointer"
-                    size="sm"
+                  <Link
+                    to={`/detail/${org.detail[0].category}/${org.detail[0].id}`}
+                    className="flex-1 inline-flex items-center justify-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                   >
                     View Details
-                  </Button>
+                  </Link>
                   <Button variant="outline" size="sm">
                     <ExternalLink className="w-4 h-4" />
                   </Button>

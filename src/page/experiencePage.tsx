@@ -18,11 +18,11 @@ export default function ExperiencePage() {
               ClassName="max-w-6xl flex flex-col lg:flex-row-reverse gap-12 items-center justify-between"
             >
               <ContentSide hero={jobs}></ContentSide>
-              <ProfilImage Profil="torin_photo.JPG" />
+              <ProfilImage Profil={experience.jobs[index].mainImage} />
             </ContainerLayout>
           ) : (
             <ContainerLayout key={index} ClassName="max-w-6xl flex flex-col lg:flex-row gap-12 items-center justify-between">
-              <ProfilImage Profil="torin_photo.JPG" />
+              <ProfilImage Profil={experience.jobs[index].mainImage} />
               <div className="md:w-1/2 w-full">
                 <ContentSide hero={jobs}></ContentSide>
               </div>

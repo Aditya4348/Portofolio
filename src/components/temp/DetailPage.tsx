@@ -26,6 +26,13 @@ export default function DetailPage() {
     return <p>Proyek dengan ID "{id}" tidak ditemukan.</p>;
   }
 
+  const mapping = item.images.map((image) => ({
+    id: image.id,
+    img: image.img,
+    url: image.url,
+    height: image.height,
+  }));
+
   return (
     <main className="bg-dark-primary text-dark-primary">
       {/* SECTION DENGAN BACKGROUND */}
@@ -64,7 +71,7 @@ export default function DetailPage() {
             Berikut adalah kumpulan dokumentasi foto dari {item.title}
           </p>
           <Masonry
-            items={item.images}
+            items={mapping}
             ease="power3.out"
             duration={0.6}
             stagger={0.05}
