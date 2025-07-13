@@ -257,7 +257,7 @@ const Masonry: React.FC<MasonryProps> = ({
             style={{ width: item.w, height: item.h }}
           >
             <img
-              src={`../../public/assets/${item.img}`}
+              src={`/assets/${item.img}`}
               alt={item.url}
               className="object-cover w-full h-full"
               loading="lazy"

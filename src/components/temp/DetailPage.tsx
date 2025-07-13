@@ -64,25 +64,53 @@ export default function DetailPage() {
       </section>
 
       {/* SECTION GALLERY */}
-      <section className="relative py-16 px-4 min-h-screen">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-3xl font-bold mb-8">Gallery</h1>
-          <p className="text-gray-700 leading-relaxed">
-            Berikut adalah kumpulan dokumentasi foto dari {item.title}
-          </p>
-          <Masonry
-            items={mapping}
-            ease="power3.out"
-            duration={0.6}
-            stagger={0.05}
-            animateFrom="bottom"
-            scaleOnHover={true}
-            hoverScale={0.95}
-            blurToFocus={true}
-            colorShiftOnHover={false}
-          />
-        </div>
-      </section>
+      {mapping.length === 0 ? (
+        <section className="relative py-16 px-4 min-h-screen">
+          <div className="max-w-6xl mx-auto">
+            <h1 className="text-3xl font-bold mb-8 text-center">Gallery</h1>
+            <div className="flex flex-col items-center justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-24 w-24 text-gray-500 dark:text-gray-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14V6h-4v2h2v4h2v2h-2v4h-4V8H8v4z"
+                />
+              </svg>
+              <p className="text-xl text-gray-700 dark:text-gray-400 text-center">
+                Belum ada data yang tersedia untuk ditampilkan. Silahkan coba di lain
+                waktu
+              </p>
+            </div>
+          </div>
+        </section>
+      ) : (
+        <section className="relative py-16 px-4 min-h-screen">
+          <div className="max-w-6xl mx-auto">
+            <h1 className="text-3xl font-bold mb-8">Gallery</h1>
+            <p className="text-gray-700 leading-relaxed">
+              Berikut adalah kumpulan dokumentasi foto dari {item.title}
+            </p>
+            <Masonry
+              items={mapping}
+              ease="power3.out"
+              duration={0.6}
+              stagger={0.05}
+              animateFrom="bottom"
+              scaleOnHover={true}
+              hoverScale={0.95}
+              blurToFocus={true}
+              colorShiftOnHover={false}
+            />
+          </div>
+        </section>
+      )}
     </main>
   );
 }

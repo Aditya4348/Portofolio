@@ -60,13 +60,6 @@ export const AboutMe = {
       detaildescription: "",
       mainImage: "/Sertifikat/Sertifikat_VUEJS_NEXTskill.jpg",
       images: [
-        { id: "1", img: "Pameran/1 (1).jpg", url: "Programmer", height: 200 },
-        { id: "2", img: "Pameran/1 (6).jpg", url: "Programmer", height: 200 },
-        { id: "3", img: "Pameran/1 (7).jpg", url: "Programmer", height: 200 },
-        { id: "4", img: "Pameran/1 (8).jpg", url: "Programmer", height: 200 },
-        { id: "5", img: "Pameran/1 (9).jpg", url: "Programmer", height: 200 },
-        { id: "6", img: "Pameran/1 (10).jpg", url: "Programmer", height: 200 },
-        { id: "7", img: "Pameran/1 (11).jpg", url: "Programmer", height: 200 },
       ],
       detail: [{ category: "certifications", id: "1" }],
     },
