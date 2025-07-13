@@ -33,7 +33,7 @@ export default function TabsCertification() {
               {/* Certificate Image */}
               <div className="relative overflow-hidden">
                 <img
-                  src={`/public/assets/${cert.mainImage}`}
+                  src={`/assets/${cert.mainImage}`}
                   alt={cert.title}
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />

@@ -34,7 +34,7 @@ export default function TabsOrganisation() {
             >
               <div className="relative mx-auto flex items-center justify-center">
                 <img
-                  src={`/public/assets/${org.image || "placeholder.svg"}`}
+                  src={`/assets/${org.image || "placeholder.svg"}`}
                   alt={org.title}
                   className="w-1/2 object-cover"
                 />

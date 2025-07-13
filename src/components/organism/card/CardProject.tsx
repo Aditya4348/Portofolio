@@ -35,7 +35,7 @@ export function Project({ projects }: ProjectProps) {
                 >
                     <div className="relative overflow-hidden">
                         <img
-                            src={`/public/assets/${project.mainImage || "placeholder.svg"}`}
+                            src={`/assets/${project.mainImage || "placeholder.svg"}`}
                             alt={project.title}
                             width={300}
                             height={200}
