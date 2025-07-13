@@ -5,10 +5,12 @@ import ExperiencePage from "../experiencePage";
 import ProjectPage from "../projectPage";
 import { AnimatePresence } from "framer-motion";
 import DetailPage from "@/components/temp/DetailPage";
+import ScrollTop from "@/components/animations/ScrollTop";
 
 export default function RouteApp() {
     return (
         <AnimatePresence mode="wait">
+            <ScrollTop />
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/about" element={<AboutPage />} />

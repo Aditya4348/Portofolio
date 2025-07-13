@@ -6,6 +6,7 @@ import { Github, Linkedin, Instagram } from "lucide-react";
 import type { HeroSectionProps } from "@/data/interface/global";
 import { ContainerLayout } from "../ui/LayoutSection";
 import ProfilImage from "../organism/ProfilImage";
+import FadeInHook from "@/components/animations/FadeInHook";
 
 export default function HeroSection() {
   const DataMedia = [
@@ -23,12 +24,14 @@ export default function HeroSection() {
       className="pt-20 pb-16 px-4 min-h-screen flex items-center overflow-x-hidden"
     >
       <ContainerLayout ClassName="max-w-6xl">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          <ContentSide hero={hero}>
-            <SocialMediaGroup socialMedia={DataMedia} />
-          </ContentSide>
-          <ImageSide Profil={hero.Profil} />
-        </div>
+        <FadeInHook>
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <ContentSide hero={hero}>
+              <SocialMediaGroup socialMedia={DataMedia} />
+            </ContentSide>
+            <ImageSide Profil={hero.Profil} />
+          </div>
+        </FadeInHook>
       </ContainerLayout>
     </main>
   );

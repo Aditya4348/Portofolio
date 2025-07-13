@@ -1,7 +1,6 @@
 import HeroSection from "@/components/temp/HeroSection";
 import { ContentProject } from "@/data/project";
 import { experience } from "@/data/experience";
-import { motion } from "framer-motion";
 // import { LazyLoadSection } from "@/lib/LazyLoading";
 import React, { Suspense } from "react";
 
@@ -11,13 +10,7 @@ const ExperienceSection = React.lazy(() => import("@/components/temp/ExperienceS
 
 export default function HomePage() {
   return (
-    <motion.div
-      className="min-h-screen bg-dark-primary text-dark-primary"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.2 }}
-    >
+    <div className="min-h-screen bg-dark-primary text-dark-primary">
       {/* Hero Section */}
       <HeroSection />
 
@@ -32,6 +25,6 @@ export default function HomePage() {
       </Suspense>
 
       
-    </motion.div>
+    </div>
   );
 }

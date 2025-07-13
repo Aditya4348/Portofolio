@@ -9,18 +9,21 @@ import {
 import { ContainerLayout } from "@/components/ui/LayoutSection";
 import TabsOrganisation from "@/components/organism/TabsOrganisation";
 import TabsCertification from "@/components/organism/TabsCertification";
-import  { AboutMe }  from "@/data/AboutMe";
+import { AboutMe } from "@/data/AboutMe";
+import FadeInHook from "@/components/animations/FadeInHook";
 
 export default function AboutPage() {
   const item = AboutMe;
 
   return (
-    <main className="bg-dark-primary text-dark-primary overflow-x-hidden">
+    <main className="bg-dark-primary text-dark-primary">
       <section className="pt-20 pb-16 px-4 min-h-screen flex-col items-center">
-        <ContainerLayout ClassName="max-w-6xl flex flex-col lg:flex-row-reverse items-center justify-between">
-          <ContentSide hero={item}></ContentSide>
-          <ProfilImage Profil="Aditya.jpg" />
-        </ContainerLayout>
+        <FadeInHook>
+          <ContainerLayout ClassName="max-w-6xl flex flex-col lg:flex-row-reverse items-center justify-between">
+            <ContentSide hero={item}></ContentSide>
+            <ProfilImage Profil="Aditya.jpg" />
+          </ContainerLayout>
+        </FadeInHook>
 
         <ContainerLayout ClassName="max-w-6xl mt-14 lg:mt-28">
           <Tabs defaultValue="organisation" className="w-full">
@@ -41,10 +44,10 @@ export default function AboutPage() {
 
             <ContainerLayout ClassName="w-full">
               <TabsContent value="organisation">
-                <TabsOrganisation/>
+                <TabsOrganisation />
               </TabsContent>
               <TabsContent value="certif">
-                <TabsCertification/>
+                <TabsCertification />
               </TabsContent>
             </ContainerLayout>
           </Tabs>
