@@ -14,8 +14,7 @@ export const experience = {
             detaildescription: "",
             mainImage: "/PKL/IMG_20241122_144114.jpg",
             images: [
-                { id: "1", img: "default.jpeg", url: "Programmer", height: 200 },
-                { id: "2", img: "default.jpeg", url: "Programmer", height: 200 },
+
             ],
             buttons: [{ label: "View Project", category: "experience", id: "1" }],
         },

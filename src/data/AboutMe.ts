@@ -35,7 +35,7 @@ export const AboutMe = {
       position: "secretary",
       enter: "2023",
       featured: true,
-      detaildescription: "",
+      detaildescription: "Dimulai sejak 2023 dengan ajakan teman saya mencon",
       mainImage: "/karangTaruna/Main.jpg",
       images: [
         { id: "1", img: "karangTaruna/1.jpg", url: "KARTA", height: 400 },
