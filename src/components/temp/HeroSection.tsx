@@ -57,6 +57,27 @@ export function ContentSide({
           {hero.description}
         </p>
 
+        {/* tampilkan link jika ada */}
+        {hero.link && hero.link.length > 0 && (
+          <div className="mt-8 flex justify-center lg:justify-start gap-6">
+            {hero.link.map((btn, index) => (
+              <a
+                key={index}
+                href={
+                  btn.type === true ? `/assets/${btn.href}` : btn.href
+                }
+                {...(btn.type === true
+                  ? { download: btn.type }
+                  : { target: "_blank", rel: "noopener noreferrer" })}
+                className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md transition duration-300"
+              >
+                {btn.label}
+              </a>
+            ))}
+          </div>
+        )}
+
+        {/* tampilkan button jika ada */}
         {hero.buttons && hero.buttons.length > 0 && (
           <div className="mt-8 flex justify-center lg:justify-start gap-6">
             {hero.buttons.map((btn, index) => (

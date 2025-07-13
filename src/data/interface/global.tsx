@@ -10,6 +10,12 @@ export interface HeroSectionProps {
     name?: string;
     subtitle?: string;
     description?: string;
+    link?: {
+        label: string;
+        href: string;
+        type?: false | true;
+        id: string;
+    }[];
     buttons?: {
         label: string;
         category?: string;
