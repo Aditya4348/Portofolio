@@ -58,7 +58,7 @@ export default function DetailPage() {
       {/* SECTION DETAIL */}
       <section className="py-16 px-4">
         <ContainerLayout ClassName="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold">Tentang {item.title}</h2>
+          <h2 className="text-3xl font-bold">About {item.title}</h2>
           <p className="mt-4 text-gray-500 leading-relaxed">{item.detaildescription}</p>
         </ContainerLayout>
       </section>
@@ -84,8 +84,7 @@ export default function DetailPage() {
                 />
               </svg>
               <p className="text-xl text-gray-700 dark:text-gray-400 text-center">
-                Belum ada data yang tersedia untuk ditampilkan. Silahkan coba di lain
-                waktu
+                There is no data available to be displayed. Please try again later.
               </p>
             </div>
           </div>
@@ -94,8 +93,8 @@ export default function DetailPage() {
         <section className="relative py-16 px-4 min-h-screen">
           <div className="max-w-6xl mx-auto">
             <h1 className="text-3xl font-bold mb-8">Gallery</h1>
-            <p className="text-gray-700 leading-relaxed">
-              Berikut adalah kumpulan dokumentasi foto dari {item.title}
+            <p className="text-gray-700 leading-relaxed mb-3">
+              The following is a collection of photo documentation from {item.title}
             </p>
             <Masonry
               items={mapping}

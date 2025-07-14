@@ -1,6 +1,5 @@
-import { Calendar, ExternalLink, MapPin, Users } from "lucide-react";
+import { Calendar, MapPin, Users } from "lucide-react";
 import { Card, CardContent } from "../ui/card";
-import { Button } from "../ui/button";
 import { AboutMe } from "@/data/AboutMe";
 import { Link } from "react-router-dom";
 import FadeUpHook from "../animations/FadeUpHook";
@@ -42,7 +41,7 @@ export default function TabsOrganisation() {
               <CardContent className="p-6">
                 <div className="space-y-4">
                   <div>
-                    <h3 className="text-xl font-bold text-green-300 mb-2">
+                    <h3 className="text-xl font-bold text-green-300 mb-2 text-center md:text-left">
                       {org.title}
                     </h3>
                     <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
@@ -72,9 +71,6 @@ export default function TabsOrganisation() {
                     >
                       View Details
                     </Link>
-                    <Button variant="outline" size="sm">
-                      <ExternalLink className="w-4 h-4" />
-                    </Button>
                   </div>
                 </div>
               </CardContent>

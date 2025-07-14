@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardAction, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Building2 } from "lucide-react";
 import { AboutMe } from "@/data/AboutMe";
@@ -49,18 +49,6 @@ export default function TabsCertification() {
                 >
                   {cert.status}
                 </Badge>
-
-                {/* Hover Actions */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="flex space-x-2">
-                    <Link
-                      to={`/detail/${cert.detail[0].category}/${cert.detail[0].id}`}
-                      className="text-white bg-blue-500 hover:bg-blue-600 px-2 py-1 rounded-md text-sm font-semibold transition-colors duration-300"
-                    >
-                      View Detail
-                    </Link>
-                  </div>
-                </div>
               </div>
 
               {/* Certificate Info */}
@@ -103,6 +91,16 @@ export default function TabsCertification() {
                     )}
                   </div>
                 </div>
+
+                {/* Actions */}
+                <CardAction className="justify-center items-center w-1/2">
+                  <Link
+                    to={`/detail/${cert.detail[0].category}/${cert.detail[0].id}`}
+                    className="w-full text-white bg-blue-500 hover:bg-blue-600 px-2 py-1 rounded-md text-sm font-semibold transition-colors duration-300"
+                  >
+                    View Detail
+                  </Link>
+                </CardAction>
               </CardContent>
             </Card>
           ))}

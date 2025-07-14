@@ -41,20 +41,6 @@ export function Project({ projects }: ProjectProps) {
                             height={200}
                             className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                         />
-                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-                            <a href="{project.github}" target="_blank" rel="noopener noreferrer">
-                                <Button size="sm" variant="secondary">
-                                    <Github className="w-4 h-4 mr-2" />
-                                    Code
-                                </Button>
-                            </a>
-                            <Link to={`/detail/${project.detail[0].category}/${project.detail[0].id}`} >
-                                <Button size="sm" variant="secondary">
-                                    <ExternalLink className="w-4 h-4 mr-2" />
-                                    Detail
-                                </Button>
-                            </Link>
-                        </div>
                     </div>
                     <CardHeader>
                         <CardTitle className="text-dark-primary">{project.title}</CardTitle>
@@ -67,6 +53,28 @@ export function Project({ projects }: ProjectProps) {
                                     {tag}
                                 </Badge>
                             ))}
+                        </div>
+                        <div className="w-full flex justify-end gap-2 mt-4">
+                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="w-1/2">
+                                <Button
+                                    size="sm"
+                                    variant="secondary"
+                                    className="w-full flex items-center gap-2 px-4 py-2 rounded-md shadow-sm border border-slate-600 hover:border-blue-400 transition-colors"
+                                >
+                                    <Github className="w-4 h-4" />
+                                    Code
+                                </Button>
+                            </a>
+                            <Link to={`/detail/${project.detail[0].category}/${project.detail[0].id}`} className="w-1/2">
+                                <Button
+                                    size="sm"
+                                    variant="secondary"
+                                    className="w-full flex items-center gap-2 px-4 py-2 rounded-md shadow-sm border border-slate-600 hover:border-blue-400 transition-colors"
+                                >
+                                    <ExternalLink className="w-4 h-4" />
+                                    Detail
+                                </Button>
+                            </Link>
                         </div>
                     </CardContent>
                 </Card>
