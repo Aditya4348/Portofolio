@@ -11,25 +11,21 @@ export const DataProject = [
         detaildescription: "This Todo List app was developed as a modern task management solution, focused on performance, usability, and responsive design. Built with Laravel Livewire, it delivers real-time interactivity without the need for additional JavaScript.All core features such as adding, editing, completing, and deleting tasks are handled without page reloads, ensuring a fast and seamless user experience — ideal for individuals or small teams.The UI is styled using Tailwind CSS, resulting in a clean, minimalist interface that looks great on all screen sizes. Responsiveness and speed were key priorities throughout the development.This project also serves as an exploration into building backend-driven SPA-like applications without relying on frontend frameworks like React or Vue. It showcases how Laravel can power interactive, modern web apps on its own.More than just a productivity tool, this app is a demonstration of my ability to build scalable, interactive web applications with clean architecture and modern tech stacks.",
         mainImage: "TodolistWeb.png",
         images: [
-                { id: "1", img: "default.jpeg", url: "Programmer", height: 200 },
-                { id: "2", img: "default.jpeg", url: "Programmer", height: 200 },
             ],
         tags: ["Laravel", "LiveWire", "HTML", "CSS", "Tailwind"],
-        github: "#",
+        github: "https://github.com/Aditya4348/Todolist",
         detail: [{category: "project", id: "1"}],
     },
     {
         id: "2",
         title: "Slicing Web ( React )",
         description: "A modern website layout sliced and built using React.js, component reusability, and clean UI architecture.",
-        detaildescription: "",
+        detaildescription: "A modern website built using React and TypeScript technologies, with a focus on component reusability and clean UI architecture.",
         mainImage: "SlicingReact.png",
         images: [
-                { id: "1", img: "default.jpeg", url: "Programmer", height: 200 },
-                { id: "2", img: "default.jpeg", url: "Programmer", height: 200 },
             ],
-        tags: ["React", "Tailwind", "HTML",],
-        github: "#",
+        tags: ["React", "Tailwind CSS", "HTML", "CSS", "Typescript", "Vite"],
+        github: "https://github.com/Aditya4348/SlicingWebReact",
         detail: [{category: "project", id: "2"}],
     },
     {
@@ -39,11 +35,9 @@ export const DataProject = [
         detaildescription: "This website was developed using Vue.js, adopting a clean and structured UI architecture and emphasizing component reusability. By leveraging this technology, we are able to build a modern, efficient, and easily maintainable web application.The creation of this website originated as a Final Project for a Bootcamp organized by NextSkill, titled “Learning Vue.js Fundamentals”. This project not only serves as a practical application of the skills acquired, but also marks the beginning of a professional portfolio in frontend development.",
         mainImage: "SlicingVueJS.png",
         images: [
-                { id: "1", img: "default.jpeg", url: "Programmer", height: 200 },
-                { id: "2", img: "default.jpeg", url: "Programmer", height: 200 },
             ],
         tags: ["Vue JS", "HTML", "Tailwind"],
-        github: "#",
+        github: "https://github.com/Aditya4348/SlicingWeb",
         detail: [{category: "project", id: "3"}],
     },
     {
@@ -54,11 +48,9 @@ export const DataProject = [
         
         mainImage: "FinancialWeb.png",
         images: [
-                { id: "1", img: "default.jpeg", url: "Programmer", height: 200 },
-                { id: "2", img: "default.jpeg", url: "Programmer", height: 200 },
             ],
         tags: ["Laravel", "LiveWire", "HTML", "CSS", "Tailwind"],
-        github: "#",
+        github: "https://github.com/Aditya4348/Financial_management_website",
         detail: [{category: "project", id: "4"}],
     },
 ]
